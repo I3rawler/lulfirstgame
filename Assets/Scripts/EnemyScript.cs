@@ -11,12 +11,15 @@ public class EnemyScript : MonoBehaviour {
 	void Start ()
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
+
 	}
 	
 	void FixedUpdate () 
 	{
-		float z = Mathf.Atan2 ((player.transform.position.y - transform.position.y), 
-			          (player.transform.position.x - transform.position.x)) *
+		var playerpos = GameObject.FindWithTag ("Player").transform.position;		
+
+		float z = Mathf.Atan2 ((playerpos.y - transform.position.y), 
+			          (playerpos.x - transform.position.x)) *
 		          Mathf.Rad2Deg - 90;
 
 		transform.eulerAngles = new Vector3 (0, 0, z);

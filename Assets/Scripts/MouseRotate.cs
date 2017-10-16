@@ -22,8 +22,10 @@ public class MouseRotate : MonoBehaviour {
 		transform.rotation = rot;
 		transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z);
 
-		float input = Input.GetAxis ("Vertical");
-		rb2d.AddForce (gameObject.transform.up * speed * input);
+		float vertical = Input.GetAxis ("Vertical");
+		float horizontal = Input.GetAxis ("Horizontal");
+		rb2d.AddForce (gameObject.transform.up * speed * vertical);
+		rb2d.AddForce (gameObject.transform.right * speed * horizontal);
 	}
 
 	void OnCollisionEnter2D (Collision2D coll)
