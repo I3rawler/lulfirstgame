@@ -34,7 +34,7 @@ public class MouseRotate : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
-
+		
 	}
 }
 

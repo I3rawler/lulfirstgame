@@ -46,8 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BulletMover.cs" />
-     <Compile Include="Assets\Scripts\BulletShooter.cs" />
+     <Compile Include="Assets\Scripts\BoundaryCheck.cs" />
+     <Compile Include="Assets\Scripts\BulletDestroy.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn.cs" />
      <Compile Include="Assets\Scripts\MouseRotate.cs" />

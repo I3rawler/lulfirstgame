@@ -9,6 +9,10 @@ public class Projectile : MonoBehaviour {
 
 	private float projectileVelocity;
 
+	public float fireRate;
+
+	private float nextFire;
+
 	//private Rigidbody2D rb2d;
 	public float speed;
 
@@ -23,8 +27,9 @@ public class Projectile : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		if (Input.GetButtonDown ("Fire1")) 
+		if (Input.GetButtonDown ("Fire1") && Time.time > nextFire) 
 		{
+			nextFire = Time.time + fireRate;
 
 			Vector3 worldMousePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			Vector2 direction = (Vector2)((worldMousePos - transform.position));
@@ -33,8 +38,8 @@ public class Projectile : MonoBehaviour {
 			GameObject bullet = (GameObject)Instantiate(projectilePrefab, transform.position + (Vector3)(direction * 0.5f), Quaternion.identity);
 			// GameObject bullet = (GameObject)Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 			Projectiles.Add (bullet);
-			bullet.GetComponent<Rigidbody2D>().velocity = direction * projectileVelocity;
-		}
+				bullet.GetComponent<Rigidbody2D>().velocity = direction * projectileVelocity;
+			}
 
 		for(int i = 0; i < Projectiles.Count; i++)
 		{

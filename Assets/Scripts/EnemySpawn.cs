@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour {
 	
 	//public PlayerHealth playerHealth;       // Reference to the player's heatlh.
-	public GameObject Enemy;                // The enemy prefab to be spawned.
+	public GameObject[] Enemy;                // The enemy prefab to be spawned.
 	public float spawnTime = 3f;            // How long between each spawn.
 	public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
 
@@ -29,8 +29,9 @@ public class EnemySpawn : MonoBehaviour {
 		*/
 		// Find a random index between zero and one less than the number of spawn points.
 		int spawnPointIndex = Random.Range (0, spawnPoints.Length);
+		int enemyIndex = Random.Range (0, Enemy.Length);
 
 		// Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
-		Instantiate (Enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+		Instantiate (Enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
 	}
 }
