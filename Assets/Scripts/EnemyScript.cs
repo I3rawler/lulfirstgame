@@ -8,11 +8,12 @@ public class EnemyScript : MonoBehaviour {
 	public Transform player;
 	private Rigidbody2D rb2d;
 
-	void Start ()
+    public Sprite mySprite;
+
+    void Start ()
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
-
-	}
+    }
 	
 	void FixedUpdate () 
 	{
@@ -31,7 +32,13 @@ public class EnemyScript : MonoBehaviour {
 	{
 		if (coll.gameObject.tag == "Bullet") 
 		{
-			Destroy (gameObject);
-		}
+            // Destroy (gameObject);
+            this.GetComponent<SpriteRenderer>().sprite = mySprite;
+           // this.gameObject.layer = -1;
+            Destroy(rb2d);
+            Destroy(GetComponent<BoxCollider2D>());
+            Destroy(GetComponent<EnemyScript>());
+            
+        }
 	}
 }

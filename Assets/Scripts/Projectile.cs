@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour {
 			Vector2 direction = (Vector2)((worldMousePos - transform.position));
 			direction.Normalize ();
 
-			GameObject bullet = (GameObject)Instantiate(projectilePrefab, transform.position + (Vector3)(direction * 0.5f), Quaternion.identity);
+			GameObject bullet = (GameObject)Instantiate(projectilePrefab, transform.position + (Vector3)(direction * 1.5f), Quaternion.identity);
 			// GameObject bullet = (GameObject)Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 			Projectiles.Add (bullet);
 				bullet.GetComponent<Rigidbody2D>().velocity = direction * projectileVelocity;
