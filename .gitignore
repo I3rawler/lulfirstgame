@@ -1,6 +1,7 @@
 Library/
 .DS_Store
 *.DS_Store
+*.meta
 Temp/UnityLockfile
 Assets/Textures/._marart.png
 Assets/Textures/._munster1.png
