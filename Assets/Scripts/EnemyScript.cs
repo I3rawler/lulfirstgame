@@ -10,12 +10,9 @@ public class EnemyScript : MonoBehaviour {
 
     public Sprite mySprite;
 
-    public int Points = 1;
-
     void Start ()
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
-        Score score = coll.GetComponent<Score>();
     }
 	
 	void FixedUpdate () 
@@ -43,12 +40,5 @@ public class EnemyScript : MonoBehaviour {
             Destroy(GetComponent<EnemyScript>());
             
         }
-
-        if (score != null)
-        {
-            score.AddScore(Points);
-            Debug.Log("Collision between " + this + " and " + coll);
-        }
-
-    }
+	}
 }
