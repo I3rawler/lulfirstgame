@@ -48,8 +48,11 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BoundaryCheck.cs" />
      <Compile Include="Assets\Scripts\BulletDestroy.cs" />
+     <Compile Include="Assets\Scripts\EnemyDestroy.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn.cs" />
+     <Compile Include="Assets\Scripts\GameOverUI.cs" />
+     <Compile Include="Assets\Scripts\Image.cs" />
      <Compile Include="Assets\Scripts\MouseRotate.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
  <Reference Include="UnityEngine.UI">

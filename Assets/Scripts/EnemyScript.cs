@@ -26,6 +26,11 @@ public class EnemyScript : MonoBehaviour {
 		transform.eulerAngles = new Vector3 (0, 0, z);
 
 		rb2d.AddForce (gameObject.transform.up * speed);
+
+        /*if (GameObject.FindWithTag("Player") == null) {
+
+            return;
+        }*/
 	}
 
 	void OnCollisionEnter2D (Collision2D coll)
