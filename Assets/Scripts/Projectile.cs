@@ -39,7 +39,10 @@ public class Projectile : MonoBehaviour {
 			// GameObject bullet = (GameObject)Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 			Projectiles.Add (bullet);
 				bullet.GetComponent<Rigidbody2D>().velocity = direction * projectileVelocity;
-			}
+
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+        }
 
 		for(int i = 0; i < Projectiles.Count; i++)
 		{

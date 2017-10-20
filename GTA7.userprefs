@@ -1,8 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameOverUI.cs">
     <Files>
       <File FileName="Assets\Scripts\GameOverUI.cs" Line="11" Column="4" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\EnemyScript.cs" Line="1" Column="1" />
+>>>>>>> 9079f00df2d64b438f3036f41fc5714b87a1d6d0
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
