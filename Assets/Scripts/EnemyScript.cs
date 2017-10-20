@@ -11,13 +11,10 @@ public class EnemyScript : MonoBehaviour {
 
     public Sprite mySprite;
 
-    public int scoreValue;
-    public Text scoreText;
-
     void Start ()
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
-        scoreValue = 0;
+
         
     }
 	
@@ -31,19 +28,17 @@ public class EnemyScript : MonoBehaviour {
 
 		transform.eulerAngles = new Vector3 (0, 0, z);
 
-		rb2d.AddForce (gameObject.transform.up * speed);
-
-        scoreText.text = scoreValue.ToString();
-	}
+        rb2d.AddForce(gameObject.transform.up * speed);
+    }
 
 	void OnCollisionEnter2D (Collision2D coll)
 	{
 		if (coll.gameObject.tag == "Bullet") 
 		{
-            scoreValue = scoreValue + 100;
+
 
             // Destroy (gameObject);
-            this.GetComponent<SpriteRenderer>().sprite = mySprite;
+            GetComponent<SpriteRenderer>().sprite = mySprite;
             // this.gameObject.layer = -1;
             
 
@@ -54,12 +49,7 @@ public class EnemyScript : MonoBehaviour {
 
             
         }
-        /*
-        GameObject UIT = GameObject.FindWithTag("EditorOnly");
-        Score score = UIT.GetComponent<Score>();
 
-        score.AddScore(scoreValue);
-        */
 
 
     }
