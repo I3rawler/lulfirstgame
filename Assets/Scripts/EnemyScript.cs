@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour {
 
@@ -10,9 +11,14 @@ public class EnemyScript : MonoBehaviour {
 
     public Sprite mySprite;
 
+    public int scoreValue;
+    public Text scoreText;
+
     void Start ()
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
+        scoreValue = 0;
+        
     }
 	
 	void FixedUpdate () 
@@ -26,19 +32,35 @@ public class EnemyScript : MonoBehaviour {
 		transform.eulerAngles = new Vector3 (0, 0, z);
 
 		rb2d.AddForce (gameObject.transform.up * speed);
+
+        scoreText.text = scoreValue.ToString();
 	}
 
 	void OnCollisionEnter2D (Collision2D coll)
 	{
 		if (coll.gameObject.tag == "Bullet") 
 		{
+            scoreValue = scoreValue + 100;
+
             // Destroy (gameObject);
             this.GetComponent<SpriteRenderer>().sprite = mySprite;
-           // this.gameObject.layer = -1;
+            // this.gameObject.layer = -1;
+            
+
             Destroy(rb2d);
             Destroy(GetComponent<BoxCollider2D>());
             Destroy(GetComponent<EnemyScript>());
+
+
             
         }
-	}
+        /*
+        GameObject UIT = GameObject.FindWithTag("EditorOnly");
+        Score score = UIT.GetComponent<Score>();
+
+        score.AddScore(scoreValue);
+        */
+
+
+    }
 }
